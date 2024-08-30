@@ -1,0 +1,46 @@
+import random
+'''def get_computer_choice():
+  choices=["rock","paper","scissors"]
+  return random.choice(choices)'''
+
+def get_user1_choice():
+  user1_choice=input("enter the rock,paper or scissorspaper user 1 :").lower()
+
+  while user1_choice not in ["rock","paper","scissors"]:
+    print("Invalid choice please do enter the choice again")
+    user1_choice=input("enter the rock,paper or scissors user 1 :").lower()
+  return user1_choice
+
+def get_user2_choice():
+  user2_choice=input("enter the rock,paper or scissorspaper user 2 :").lower()
+
+  while user2_choice not in ["rock","paper","scissors"]:
+    print("Invalid choice please do enter the choice again")
+    user2_choice=input("enter the rock,paper or scissors user 2 :pa").lower()
+  return user2_choice
+
+
+def determine_winner(user1_choice,user2_choice):
+  if user1_choice == user2_choice:
+    return "its a tie"
+
+  if (user1_choice == "rock" and user2_choice== "scissors") or \
+     (user1_choice == "scissors" and user2_choice== "paper") or \
+     (user1_choice == "paper" and user2_choice== "rock"):
+     return "you win"
+
+  return "user2 wins"
+
+def play_game():
+  print("welcome to rock,paper,scissors game")
+  user1_choice=get_user1_choice()
+  user2_choice=get_user2_choice()
+
+  print(f"you chose: {user1_choice}" )
+  print(f"other chose: {user2_choice}")
+
+  result = determine_winner(user1_choice,user2_choice)
+  print(result)
+
+#start game
+play_game()
